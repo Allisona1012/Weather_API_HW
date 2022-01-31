@@ -25,7 +25,7 @@ cityForm.addEventListener('submit',async (e) => {
     let city = await getWeatherAPI(cityFormName)
     //addToWeatherList(city)
     console.log(city);
-
+    showData(city);
 })
 
 
@@ -34,7 +34,7 @@ cityForm.addEventListener('submit',async (e) => {
 
 //show the info
 const showData = async (city) => {
-    data= await data;
+    // data= await data;
 
     // This is setting a variable name to the headers in the index.html
     //let weatherImg = document.getElementById('card-img');
