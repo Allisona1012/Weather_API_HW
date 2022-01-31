@@ -4,9 +4,9 @@ console.log(`Hello world!`)
 
 // set up how to get the connection set up 
 const getWeatherAPI = async function(city,zipCode=null){
-    let response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=`);
     // after getting connected the data is going to equal the jason
-    let data = await response.json() 
+    let data = await response.json(); 
     // returning the data will occur once the data has been accessed
     return await data
 }
@@ -19,10 +19,11 @@ cityForm.addEventListener('submit',async (e) => {
     // this will keep the page from reloading when we submit the city name
     e.preventDefault();
     // this is getting the input and settign a value to it to retrieve the information
-    let cityFormName= e.target.city.value;
+    let cityFormName= e.target.city.value.toLowerCase();
     console.log(cityFormName)
     //This will put the city into the api
     let city = await getWeatherAPI(cityFormName)
+    addToWeatherList(city)
     console.log(city);
 
 })
@@ -31,4 +32,11 @@ cityForm.addEventListener('submit',async (e) => {
 
 // update the link based on the city OR zipcode
 
-// show the 
+// show the info
+function addToList(city){
+    let weatherList = document.querySelector(`#temp`);
+    let liEl = document.createElement('li');
+    li.innerText= `the current conditions are: ${city.temp}`
+    weatherList.append(liEl);
+
+}
