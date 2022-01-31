@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="#">
 <script src="js/main.js" defer></script>
-<title>Title</title>
+<title>Weather</title>
 </head>
 <body>
 <h1>Welcome to you new favorite weather APP!</h1>
@@ -18,13 +18,22 @@
     <input type="text" city="city" id="city" >
     <input type="submit" value="search">
 </form>
-<form id="zipForm">
+<ul id="weatherList"></ul>
+<!-- <form id="zipForm">
     <label for="zipCode"> Or Enter your zip code: </label>
     <input type="text" zipCode="zipCode" id="zipCode">
     <input type="submit" value="search">
-</form>
+</form> -->
 <div class="container">
-    <ul id="weatherList"></ul>
+    <div class="card">
+       <!-- <img src="..." class="card-img-top" alt="...">  -->
+        <div class="card-body">
+        <h2 id="current"></h2>
+        <h2 id="tempHigh"></h2>
+        <h2 id="tempLow"></h2>
+        <h2 id="humidity"></h2>
+        </div>
+      </div> 
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
